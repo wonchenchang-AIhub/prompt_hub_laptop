@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Prompt Hub · 筆電版</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  <meta name="description" content="Prompt Hub 筆電版 - AI 提示詞分享與應用學習平台">
+</head>
+<body class="laptop-view">
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<header class="site-header">
+  <div class="hero-block">
+    <p class="hero-eyebrow">PROMPT HUB · 張萬權 &nbsp;|&nbsp; wonchen.chang@gmail.com</p>
+    <h1 class="hero-title">AI 提示詞分享與應用學習平台</h1>
+    <p class="hero-tagline">AI 提示詞<span class="hero-accent">模組庫</span></p>
+    <p class="hero-quote">「AI 給你什麼，取決於你怎麼問它。」&mdash; Nathan Hunter</p>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜尋提示詞名稱、說明或內容…">
+    </div>
+  </div>
+</header>
+
+<nav class="cat-nav" id="catNav">
+  <button class="cat-btn active" data-cat="all">
+    <span class="cat-icon">◉</span> 全部
+    <span class="cat-count" id="count-all">90</span>
+  </button>
+  <button class="cat-btn" data-cat="preset">
+    <span class="cat-icon">⚙️</span> AI工具設定
+    <span class="cat-count">2</span>
+  </button>
+  <button class="cat-btn" data-cat="decision">
+    <span class="cat-icon">📊</span> 決策與分析
+    <span class="cat-count">8</span>
+  </button>
+  <button class="cat-btn" data-cat="proposal">
+    <span class="cat-icon">📋</span> 企劃與提案
+    <span class="cat-count">10</span>
+  </button>
+  <button class="cat-btn" data-cat="comms">
+    <span class="cat-icon">💼</span> 職場溝通
+    <span class="cat-count">6</span>
+  </button>
+  <button class="cat-btn" data-cat="writing">
+    <span class="cat-icon">✍️</span> 文稿優化
+    <span class="cat-count">8</span>
+  </button>
+  <button class="cat-btn" data-cat="ai_roles">
+    <span class="cat-icon">🧠</span> 策略智囊
+    <span class="cat-count">6</span>
+  </button>
+  <button class="cat-btn" data-cat="industry">
+    <span class="cat-icon">📈</span> 產業分析
+    <span class="cat-count">9</span>
+  </button>
+  <button class="cat-btn" data-cat="sales">
+    <span class="cat-icon">💰</span> 銷售業務
+    <span class="cat-count">8</span>
+  </button>
+  <button class="cat-btn" data-cat="research">
+    <span class="cat-icon">🔬</span> 研究分析
+    <span class="cat-count">22</span>
+  </button>
+  <button class="cat-btn" data-cat="routine">
+    <span class="cat-icon">📅</span> 日常效率
+    <span class="cat-count">4</span>
+  </button>
+  <button class="cat-btn" data-cat="learning">
+    <span class="cat-icon">🎓</span> 學習成長
+    <span class="cat-count">6</span>
+  </button>
+  <button class="cat-btn" data-cat="life">
+    <span class="cat-icon">✨</span> 生活娛樂
+    <span class="cat-count">2</span>
+  </button>
+</nav>
+
+<main class="main-grid" id="cardGrid"></main>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-meta">
+        <span class="modal-cat-tag" id="modalCat"></span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+      </div>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <div class="modal-body">
+      <pre class="modal-content" id="modalContent"></pre>
+    </div>
+    <div class="modal-cases" id="modalCases" style="display:none;">
+      <div class="modal-cases-title">📋 實戰案例 · 點擊複製可直接使用</div>
+      <div id="modalCasesList"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="copy-btn" id="copyBtn">
+        <span class="copy-icon">⎘</span> 複製提示詞
+      </button>
+      <span class="copy-confirm" id="copyConfirm"></span>
+      <span class="modal-copy-count" id="modalCopyCount"></span>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="cases.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
